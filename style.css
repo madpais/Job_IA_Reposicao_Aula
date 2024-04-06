@@ -1,0 +1,178 @@
+* {
+   margin: 0;
+   padding: 0;
+  }
+  
+  /* Cor de Fundo*/
+  body {
+    background-image: url(img/back.jpeg);
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Helvetica, sans-serif;
+    
+  }
+
+  header {
+    padding: 3rem;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+  }
+
+  header .h2 {
+    color:white;
+  }
+
+  h2 {
+  color: white;
+  background-color: black;
+  padding: 1rem;
+  margin-left: 7rem;
+  
+  }
+
+  h3 {
+    margin-top: 1rem;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FF9F55;
+
+  }
+  
+  p {
+    margin-top: 1em
+  }
+ 
+ 
+  /* Timeline Atual */
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Linha da Timeline */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Container */
+  .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  /* Circulos da Timeline */
+  .container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Posição Esquerda*/
+  .esquerda {
+    left: 0;
+  }
+  
+  /* Posição Direita */
+  .direita {
+    left: 50%;
+  }
+  
+
+  .esquerda::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+  }
+  
+
+  .direita::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  
+  /* Circulos do container */
+  .direita::after {
+    left: -16px;
+  }
+  
+  /* Conteúdo */
+  .conteudo {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    
+  }
+  
+  /* Responsividade de Tela */
+  @media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+    .timeline::after {
+      left: 31px;
+    }
+  
+  /* Container */
+    .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+  
+    .container::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+  
+  /* Ajuste Circulo */
+    .esquerda::after, .direita::after {
+      left: 15px;
+    }
+  
+  /* Ajustes Container*/
+    .direita {
+      left: 0%;
+    }
+  }
